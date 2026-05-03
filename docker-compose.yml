@@ -1,0 +1,46 @@
+version: "3.9"
+
+# Example multi-interface deployment.
+# Each interface (eth0, eth1) is NATed to a different public IP.
+# The retracker container joins both networks so it can bind per-interface.
+
+services:
+  retracker:
+    image: ghcr.io/l2jliga/retracker:latest
+    restart: unless-stopped
+    networks:
+      isp1:
+        ipv4_address: 10.10.1.2
+      isp2:
+        ipv4_address: 10.10.2.2
+    ports:
+      - "6969:6969/tcp"
+      - "6969:6969/udp"
+      - "9090:9090/tcp"   # metrics
+      - "8080:8080/tcp"   # health
+    volumes:
+      - ./config.yaml:/etc/retracker/config.yaml:ro
+    environment:
+      - GOMAXPROCS=2
+    healthcheck:
+      test: ["/retracker", "-healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+networks:
+  isp1:
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      config:
+        - subnet: 10.10.1.0/24
+  isp2:
+    driver: macvlan
+    driver_opts:
+      parent: eth1
+    ipam:
+      config:
+        - subnet: 10.10.2.0/24

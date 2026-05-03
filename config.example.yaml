@@ -1,0 +1,57 @@
+# retracker configuration
+# Copy to /etc/retracker/config.yaml and adjust for your setup.
+
+listen:
+  http: ":6969"
+  udp: ":6969"
+
+peers:
+  max_per_swarm: 50
+  announce_interval: 30m
+  gc_interval: 5m
+  peer_timeout: 90m
+  bloom_capacity: 100000
+  bloom_fp_rate: 0.01
+
+trackers:
+  # Static tracker list (always used)
+  static:
+    - "udp://open.tracker.cl:1337"
+    - "udp://opentracker.i2p.rocks:6969"
+    - "udp://tracker.openbittorrent.com:6969"
+    - "http://tracker.openbittorrent.com:80/announce"
+
+  # Optional: URL returning a newline-separated list of tracker URLs
+  # Refreshed periodically. Example sources:
+  #   https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt
+  remote_url: ""
+  refresh_interval: 60m
+  fetch_timeout: 30s
+
+# Network interfaces to use for upstream announces.
+# Each interface should correspond to a distinct public IP.
+# Use `name` to select by interface name, or `bind_ip` to select by IP.
+interfaces:
+  - name: "eth0"
+    public_ipv4: "203.0.113.10"
+    # public_ipv6: "2001:db8::1"   # optional
+
+  - name: "eth1"
+    public_ipv4: "203.0.113.20"
+
+  # Example: bind to a specific IP rather than an interface
+  # - bind_ip: "10.0.0.5"
+  #   public_ipv4: "198.51.100.5"
+  #   public_ipv6: "2001:db8::5"
+
+metrics:
+  enabled: true
+  listen: ":9090"
+  path: "/metrics"
+
+health:
+  listen: ":8080"
+
+log:
+  level: "info"    # debug | info | warn | error
+  format: "text"   # text | json
