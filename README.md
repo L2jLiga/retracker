@@ -37,7 +37,7 @@ docker run -d \
   -p 9090:9090 -p 8080:8080 \
   -v $(pwd)/config.yaml:/etc/retracker/config.yaml:ro \
   --network host \   # or use macvlan per docker-compose.yml
-  ghcr.io/l2jliga/retracker:latest
+  ghcr.io/L2jLiga/retracker:latest
 
 # 3. Point qBittorrent at:
 #    http://<retracker-host>:6969/announce
@@ -86,8 +86,8 @@ docker build -t retracker .
 ## Docker images
 
 Multi-arch images are published to:
-- `ghcr.io/l2jliga/retracker`
-- `docker.io/l2jliga/retracker`
+- `ghcr.io/L2jLiga/retracker`
+- `docker.io/L2jLiga/retracker`
 
 Supported architectures: `amd64`, `arm64`, `arm/v7`, `386`, `ppc64le`, `s390x`, `riscv64`
 

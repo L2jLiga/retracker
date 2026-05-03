@@ -9,8 +9,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/l2jliga/retracker/internal/metrics"
-	"github.com/l2jliga/retracker/internal/peers"
+	"github.com/L2jLiga/retracker/internal/metrics"
+	"github.com/L2jLiga/retracker/internal/peers"
 )
 
 // BEP 15 action codes

@@ -10,12 +10,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/l2jliga/retracker/internal/config"
-	"github.com/l2jliga/retracker/internal/health"
-	"github.com/l2jliga/retracker/internal/metrics"
-	"github.com/l2jliga/retracker/internal/peers"
-	"github.com/l2jliga/retracker/internal/tracker"
-	"github.com/l2jliga/retracker/internal/upstream"
+	"github.com/L2jLiga/retracker/internal/config"
+	"github.com/L2jLiga/retracker/internal/health"
+	"github.com/L2jLiga/retracker/internal/metrics"
+	"github.com/L2jLiga/retracker/internal/peers"
+	"github.com/L2jLiga/retracker/internal/tracker"
+	"github.com/L2jLiga/retracker/internal/upstream"
 )
 
 // Version info populated by linker flags

@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/l2jliga/retracker/internal/announce"
-	"github.com/l2jliga/retracker/internal/metrics"
-	"github.com/l2jliga/retracker/internal/peers"
+	"github.com/L2jLiga/retracker/internal/announce"
+	"github.com/L2jLiga/retracker/internal/metrics"
+	"github.com/L2jLiga/retracker/internal/peers"
 )
 
 // HTTPTracker handles BEP 3 announce and scrape requests.

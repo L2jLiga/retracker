@@ -16,7 +16,7 @@ permissions:
 env:
   REGISTRY_GHCR: ghcr.io
   REGISTRY_DOCKER: docker.io
-  IMAGE_NAME: ${{ github.repository }}   # e.g. l2jliga/retracker
+  IMAGE_NAME: ${{ github.repository }}   # e.g. L2jLiga/retracker
 
 jobs:
   # ── Test ──────────────────────────────────────────────────────────────────

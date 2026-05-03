@@ -16,9 +16,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/l2jliga/retracker/internal/config"
-	"github.com/l2jliga/retracker/internal/metrics"
-	"github.com/l2jliga/retracker/internal/peers"
+	"github.com/L2jLiga/retracker/internal/config"
+	"github.com/L2jLiga/retracker/internal/metrics"
+	"github.com/L2jLiga/retracker/internal/peers"
 )
 
 // TrackerProvider is implemented by tracker.TrackerList.

@@ -37,7 +37,7 @@ FROM gcr.io/distroless/static:nonroot AS final
 
 LABEL org.opencontainers.image.title="retracker" \
       org.opencontainers.image.description="Multi-interface BitTorrent re-tracker (BEP 3/15/23)" \
-      org.opencontainers.image.source="https://github.com/l2jliga/retracker" \
+      org.opencontainers.image.source="https://github.com/L2jLiga/retracker" \
       org.opencontainers.image.licenses="MIT"
 
 COPY --from=builder /retracker /retracker

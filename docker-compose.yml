@@ -6,7 +6,7 @@ version: "3.9"
 
 services:
   retracker:
-    image: ghcr.io/l2jliga/retracker:latest
+    image: ghcr.io/L2jLiga/retracker:latest
     restart: unless-stopped
     networks:
       isp1:
